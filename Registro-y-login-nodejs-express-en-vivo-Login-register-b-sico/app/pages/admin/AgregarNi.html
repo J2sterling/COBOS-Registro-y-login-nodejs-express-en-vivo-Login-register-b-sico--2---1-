@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Caso</title>
+    <link rel="stylesheet" href="../pages/admin/Styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="logo">
+            <img src="../pages/admin/Logo.png" alt="Logo">
+            <span>EvaluaKids</span>
+        </div>
+        <div class="progress-step current">
+            <span>Añadir participantes</span>
+        </div>
+        <div class="progress-step">
+            <span>Más información</span>
+        </div>
+        <div class="progress-step">
+            <span>Agenda de actividades</span>
+        </div>
+        <button class="cancel-btn">Cancelar</button>
+    </div>
+    <div class="container">
+        <div class="form-section">
+            <h2>Nombre del caso</h2>
+            <label for="foto" style="display: block;">Subir foto del estudiante</label>
+            <input type="file" id="foto" name="foto">
+            <div class="personal-info">
+                <h3>Información personal</h3>
+                <div class="info-group">
+                    <label for="nombre-nino">Nombre niño *</label>
+                    <input type="text" id="nombre-nino" placeholder="Nombre">
+                </div>
+                <div class="info-group">
+                    <label for="edad">Edad *</label>
+                    <input type="text" id="edad" placeholder="Edad">
+                </div>
+                <label for="foto" style="display: block;">Subir foto del acudiente</label>
+                <input type="file" id="foto_2" name="foto_2">
+                <div class="contact-info">
+                    <h3>Contacto</h3>
+                    <div class="info-group">
+                        <label for="nombre-acudiente">Nombre acudiente *</label>
+                        <input type="text" id="nombre-acudiente" placeholder="Nombre">
+                    </div>
+                    <div class="info-group">
+                        <label for="correo-acudiente">Correo acudiente *</label>
+                        <input type="email" id="correo-acudiente" placeholder="ejemplo@mail.com">
+                    </div>
+                </div>
+            </div>
+            <button class="add-btn">Agregar</button>
+        </div>
+        <div class="saved-info">
+            <h2>Información guardada</h2>
+            <select>
+                <option>Educador 1</option>
+                <option>Educador 2</option>
+                <option>Educador 3</option>
+                <option>Educador 4</option>
+                <option>Educador 5</option>
+            </select>
+            <div class="student-list">
+                <p>Estudiante número 1</p>
+                <p>Estudiante número 2</p>
+                <p>Estudiante número 3</p>
+                <p>Estudiante número 4</p>
+                <p>Estudiante número 5</p>
+                <button class="add-student-btn">Añadir niño</button>
+            </div>
+            <button class="next-btn">Siguiente</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
