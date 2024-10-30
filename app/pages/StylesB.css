@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Posicionar a la izquierda */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('Personas\ Fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin-left: 100px; /* Aumenta el margen para moverlo más a la derecha */
+}
+
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #000; /* Cambiado a negro */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+a {
+    font-size: 12px;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.login {
+    background-color: #007bff;
+    color: #fff;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none; /* Oculto por defecto */
+    margin-top: 10px;
+}
+

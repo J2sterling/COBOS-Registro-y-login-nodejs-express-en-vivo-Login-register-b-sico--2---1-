@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar actividad</title>
+    <link rel="stylesheet" href="../pages/admin/styles4.css">
+    <style>
+        .progress-step {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #f0f0f0; /* Fondo estándar del botón */
+            border: 1px solid #333; /* Borde del botón */
+            transition: background-color 0.3s; /* Animación de transición */
+        }
+        .progress-step:hover {
+            background-color: #007bff; /* Color al pasar el ratón */
+            color: white;
+        }
+        .progress-container {
+            display: flex;
+            gap: 10px;
+        }
+        .cancel-btn {
+            background-color: #dc3545; /* Fondo rojo para el botón de cancelar */
+            color: white;
+        }
+        .cancel-btn:hover {
+            background-color: #c82333; /* Color más oscuro en hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="logo">
+            <img src="../pages/admin/Logo3.png" alt="Logo">
+            <span>EvaluaKids</span>
+        </div>
+        <button class="progress-step" onclick="window.location.href='/admin/agregar-ni'">Añadir participantes</button>
+        <button class="progress-step" onclick="window.location.href='/admin/mas-informacion'">Más información</button>
+        <button class="progress-step" onclick="window.location.href='/admin/agenda-actividades'">Agenda de actividades</button>
+        <button class="cancel-btn" onclick="window.location.href='/admin/admin'">Cancelar</button>
+    </div>
+    <div class="container">
+        <h1>Agregar actividad</h1>
+        <div class="calendar">
+            <div class="month">
+                <!-- Eliminado contenido anterior -->
+            </div>
+            <input type="date" value="2005-01-01" min="2005-01-01" max="2029-01-01">
+        </div>
+        <div class="activities">
+            <button class="add-activity">Agregar actividad</button>
+            <ul>
+                <li>Actividad 1</li>
+                <li>Actividad 2</li>
+                <li>Actividad 3</li>
+            </ul>
+        </div>
+        <div class="activity-details">
+            <label for="description">Descripción de la actividad</label>
+            <textarea id="description">pequeña descripción</textarea>
+            <label for="skills">Habilidades</label>
+            <div id="skills">
+                <span class="skill interpersonal">Interpersonal</span>
+                <span class="skill linguistic">lingüística</span>
+                <button class="add-skill">+</button>
+            </div>
+            <label for="resources">Recursos necesarios</label>
+            <textarea id="resources">Qué materiales se requieren para la actividad</textarea>
+            <div class="upload">
+                <button class="upload-btn">Subir archivo</button>
+                <ul>
+                    <li>Doc1Actividad.pdf</li>
+                    <li>ImagenReferencia.jpeg</li>
+                </ul>
+            </div>
+            <button class="next">Siguiente</button>
+        </div>
+    </div>
+</body>
+</html>

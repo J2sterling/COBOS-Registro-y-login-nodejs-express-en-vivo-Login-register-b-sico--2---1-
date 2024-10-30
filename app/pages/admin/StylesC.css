@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Formato circular */
+    margin-right: 10px;
+}
+
+.user-details p {
+    margin: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main-content h1 {
+    margin-top: 0;
+}
+
+.description, .activities {
+    margin-bottom: 20px;
+}
+
+.activities select, .activities textarea, .activities button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.skills {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.skill {
+    padding: 5px 10px;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+}
+
+.skill.interpersonal {
+    background-color: #ff6f61;
+}
+
+.skill.linguistica {
+    background-color: #9370db;
+}
+
+.add-skill {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.uploaded-files {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.uploaded-files li {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+.submit-feedback {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear contenido a la izquierda */
+    width: 50%; /* Ajuste de anchura más pequeña */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0; /* Quitar centrado horizontal */
+    margin-left: 0; /* Posicionar a la izquierda */
+}
+
+.activity-details label, .activity-details textarea {
+    width: 100%;
+    text-align: left; /* Alinear el texto de los labels y textareas a la izquierda */
+}
+
+.sidebar .user-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+.skill {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.remove-skill-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#additional-skills .skill {
+    cursor: pointer;
+}

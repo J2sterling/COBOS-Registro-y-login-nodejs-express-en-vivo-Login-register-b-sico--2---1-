@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvaluaKids</title>
+    <link rel="stylesheet" href="../pages/admin/StylesC.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>EvaluaKids</h2>
+        <ul>
+            <li>Niño 1</li>
+            <li>Niño 2</li>
+            <li>Niño 3</li>
+        </ul>
+        <div class="user-info">
+            <img src="../pages/admin/usuario2.png" alt="Avatar del usuario" class="avatar">
+            <div class="user-details">
+                <p>Daniel Sanchez</p>
+                <p>Administrador</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Caso 1</h1>
+        <div class="description">
+            <h2>Descripción</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="activities">
+            <h2>Actividades</h2>
+            <select>
+                <option>Sin realizar</option>
+                <option>Mi primer cuento</option>
+                <option>Himno de Cali</option>
+                <option>Mi nombre</option>
+            </select>
+            <div class="activity-details">
+                <label for="activity-description">Descripción de la actividad</label>
+                <textarea id="activity-description" placeholder="pequeña descripción"></textarea>
+                <h3>Habilidades</h3>
+                <div class="skills">
+                    <!-- Habilidades seleccionadas -->
+                    <div id="selected-skills">
+                        <span class="skill interpersonal">Interpersonal <button class="remove-skill-btn">x</button></span>
+                        <span class="skill linguistica">Lingüística <button class="remove-skill-btn">x</button></span>
+                    </div>
+                
+                    <!-- Botón para agregar más habilidades -->
+                    <button id="add-skill-btn">+</button>
+                
+                    <!-- Contenedor de habilidades adicionales (oculto inicialmente) -->
+                    <div id="additional-skills" class="hidden">
+                        <span class="skill espacial" data-skill="Espacial">Espacial</span>
+                        <span class="skill logica" data-skill="Lógica">Lógica</span>
+                        <span class="skill kinestesico" data-skill="Kinestésico">Kinestésico</span>
+                        <span class="skill musical" data-skill="Musical">Musical</span>
+                        <span class="skill intrapersonal" data-skill="Intrapersonal">Intrapersonal</span>
+                    </div>
+                </div>
+                
+                <label for="resources">Recursos necesarios</label>
+        <textarea id="resources" placeholder="Qué materiales se requieren para la actividad"></textarea>
+
+    <!-- Botón de subida de archivo real -->
+              <input type="file" id="upload-input" style="display: none;">
+              <button id="upload-button" class="upload-button">Subir archivo</button>
+
+    <!-- Lista para mostrar los archivos subidos -->
+                <ul class="uploaded-files" id="uploaded-files-list">
+        <!-- Los archivos subidos se mostrarán aquí -->
+                </ul>
+            </div>
+            <button class="submit-feedback">Realizar retroalimentación</button>
+        </div>
+    </div>
+</body>
+</html>

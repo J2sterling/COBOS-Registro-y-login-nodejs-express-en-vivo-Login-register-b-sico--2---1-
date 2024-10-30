@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Estudiantes</title>
+    <link rel="stylesheet" href="../pages/admin/Styles3.css">
+    <style>
+        .progress-step {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #f0f0f0; /* Fondo estándar del botón */
+            border: 1px solid #333; /* Borde del botón */
+            transition: background-color 0.3s; /* Animación de transición */
+        }
+        .progress-step:hover {
+            background-color: #007bff; /* Color al pasar el ratón */
+            color: white;
+        }
+        .progress-container {
+            display: flex;
+            gap: 10px;
+        }
+        .cancel-btn {
+            background-color: #dc3545; /* Fondo rojo para el botón de cancelar */
+            color: white;
+        }
+        .cancel-btn:hover {
+            background-color: #c82333; /* Color más oscuro en hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="logo">
+            <img src="../pages/admin/Logo.png" alt="Logo">
+            <span>EvaluaKids</span>
+        </div>
+        <button class="progress-step" onclick="window.location.href='/admin/agregar-ni'">Añadir participantes</button>
+        <button class="progress-step" onclick="window.location.href='/admin/mas-informacion'">Más información</button>
+        <button class="progress-step" onclick="window.location.href='/admin/agenda-actividades'">Agenda de actividades</button>
+        <button class="cancel-btn" onclick="window.location.href='/admin/admin'">Cancelar</button>
+    </div>
+    <div class="main-container">
+        <div class="container">
+            <h2>Información guardada</h2>
+            <div class="dropdown">
+                <select>
+                    <option>Educador 1</option>
+                    <option>Educador 2</option>
+                    <option>Educador 3</option>
+                    <option>Educador 4</option>
+                </select>
+            </div>
+            <ul class="student-list">
+                <li>Estudiante número 1</li>
+                <li>Estudiante número 2</li>
+                <li>Estudiante número 3</li>
+                <li>Estudiante número 4</li>
+                <li>Estudiante número 5</li>
+            </ul>
+        </div>
+        <div class="container">
+            <h2>Más información</h2>
+            <div class="info-box">
+                <h3>Descripción del caso</h3>
+                <textarea>pequeña descripción</textarea>
+            </div>
+            <div class="info-box">
+                <h3>Estudiante número 2</h3>
+                <textarea>pequeña descripción</textarea>
+                <h3>Habilidades</h3>
+                <div class="skills">
+                    <span class="interpersonal">Interpersonal</span>
+                    <span class="espacial">Espacial</span>
+                    <span class="logica">Lógica</span>
+                    <img src="../pages/admin/Mas.png" class="mas-img" alt="Mas">
+                </div>
+                <h3>A reforzar:</h3>
+                <div class="to-improve">
+                    <span class="kinestesico">Kinestésico</span>
+                    <span class="musical">Musical</span>
+                    <span class="intrapersonal">Intrapersonal</span>
+                    <img src="../pages/admin/Mas.png" class="mas-img" alt="Mas">
+                </div>
+            </div>
+            <div class="next-button">
+                <button>Siguiente</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

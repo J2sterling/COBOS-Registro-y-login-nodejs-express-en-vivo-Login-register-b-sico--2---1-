@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+    <link rel="stylesheet" href="../pages/admin/AdminStyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>EvaluaKids</h2>
+        <h3>Educadores</h3>
+        <ul>
+            <li><a href="#">Educador 1</a></li>
+            <li><a href="#">Educador 2</a></li>
+            <li><a href="#">Educador 3</a></li>
+            <li><a href="#">Educador 4</a></li>
+        </ul>
+        <div class="add-educator">
+            <a href="/admin/anadir-educador">Agregar educador +</a>
+        </div>
+        <div class="user-info">
+            <img src="../pages/admin/usuario.png" alt="Imagen del usuario">
+            <p class="user-name">Nombre del Usuario</p>
+            <p class="user-class">Clase del Usuario</p>
+            <button id="logout-button">Cerrar Sesión</button> <!-- Botón de cierre de sesión -->
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Casos</h1>
+            <div class="buttons">
+                <a href="/admin/agregar-ni"><button class="new-report">Nuevo reporte</button></a>
+                <a href="/admin/caso"><button class="new-case">Nuevo caso</button></a>
+             </div>
+            
+        </div>
+        <div class="case-grid">
+            <div class="case">
+                <img src="../pages/admin/niño1.png" alt="Imagen 1">
+                <p>Detalles del caso</p>
+                <div class="actions">
+                    <button class="modify">Modificar</button>
+                    <button class="delete">Eliminar</button>
+                </div>
+            </div>
+            <!-- Otros casos... -->
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 EvaluaKids</p>
+    </div>
+    <script src="/main.js" defer></script>
+   
+</body>
+</html>

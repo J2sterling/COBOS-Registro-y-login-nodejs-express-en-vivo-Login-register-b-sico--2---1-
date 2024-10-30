@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Caso</title>
+    <link rel="stylesheet" href="../pages/admin/Styles.css">
+    <style>
+        /* Estilos de los botones de navegación */
+        .progress-step {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #f0f0f0; /* Fondo estándar del botón */
+            border: 1px solid #333; /* Borde del botón */
+            transition: background-color 0.3s; /* Animación de transición */
+        }
+        .progress-step:hover {
+            background-color: #007bff; /* Color al pasar el ratón */
+            color: white;
+        }
+        .progress-container {
+            display: flex;
+            gap: 10px;
+        }
+        .cancel-btn {
+            background-color: #dc3545; /* Fondo rojo para el botón de cancelar */
+            color: white;
+        }
+        .cancel-btn:hover {
+            background-color: #c82333; /* Color más oscuro en hover */
+        }
+        /* Oculta la sección del formulario inicialmente */
+        .form-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="logo">
+            <img src="../pages/admin/Logo.png" alt="Logo">
+            <span>EvaluaKids</span>
+        </div>
+        <button class="progress-step" onclick="window.location.href='/admin/agregar-ni'">Añadir participantes</button>
+        <button class="progress-step" onclick="window.location.href='/admin/mas-informacion'">Más información</button>
+        <button class="progress-step" onclick="window.location.href='/admin/agenda-actividades'">Agenda de actividades</button>
+        <button class="cancel-btn" onclick="window.location.href='/admin/admin'">Cancelar</button>
+    </div>
+
+    <div class="container">
+        <!-- Sección del formulario que estará oculta hasta que se presione "Añadir niño" -->
+        <div class="form-section" id="formulario-caso">
+            <h2>Nombre del caso</h2>
+            <form id="agregar-caso-form" enctype="multipart/form-data">
+                <label for="imagen_estudiante">Subir foto del estudiante</label>
+                <input type="file" id="imagen_estudiante" name="imagen_estudiante">
+
+                <div class="personal-info">
+                    <h3>Información personal</h3>
+                    <div class="info-group">
+                        <label for="nombre_nino">Nombre niño *</label>
+                        <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre" required>
+                    </div>
+                    <div class="info-group">
+                        <label for="edad">Edad *</label>
+                        <input type="number" id="edad" name="edad" placeholder="Edad" required>
+                    </div>
+                </div>
+
+                <label for="imagen_acudiente">Subir foto del acudiente</label>
+                <input type="file" id="imagen_acudiente" name="imagen_acudiente">
+
+                <div class="contact-info">
+                    <h3>Contacto</h3>
+                    <div class="info-group">
+                        <label for="nombre_acudiente">Nombre acudiente *</label>
+                        <input type="text" id="nombre_acudiente" name="nombre_acudiente" placeholder="Nombre" required>
+                    </div>
+                    <div class="info-group">
+                        <label for="correo_acudiente">Correo acudiente *</label>
+                        <input type="email" id="correo_acudiente" name="correo_acudiente" placeholder="ejemplo@mail.com" required>
+                    </div>
+
+                    <!-- Select para elegir educador -->
+                    <div class="info-group">
+                        <label for="educador-select">Selecciona un Educador:</label>
+                        <select id="educador-select" name="educador_id">
+                            <!-- Opciones de educadores serán cargadas dinámicamente -->
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-btn">Agregar</button>
+            </form>
+        </div>
+
+        <!-- Sección de "Información guardada" -->
+        <div class="saved-info">
+            <h2>Información guardada</h2>
+            <button class="add-student-btn" id="show-form-btn">Añadir niño</button>
+            <button class="next-btn">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar la sección del formulario cuando se presiona "Añadir niño"
+        document.getElementById("show-form-btn").addEventListener("click", () => {
+            document.getElementById("formulario-caso").style.display = "block";
+        });
+
+        // Cargar la lista de educadores al cargar la página
+        async function cargarEducadores() {
+            try {
+                const response = await fetch("http://localhost:4000/api/educadores");
+                const educadores = await response.json();
+
+                const select = document.getElementById("educador-select");
+                select.innerHTML = ""; // Limpia las opciones anteriores
+                educadores.forEach(educador => {
+                    const option = document.createElement("option");
+                    option.value = educador.educador_id;
+                    option.textContent = educador.nombre;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Error al cargar los educadores:", error);
+            }
+        }
+
+        cargarEducadores(); // Llama a la función para cargar los educadores al cargar la página
+
+        // Enviar el formulario al servidor con `educador_id`
+        document.getElementById("agregar-caso-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+
+            try {
+                const response = await fetch("http://localhost:4000/api/agregar-caso", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.message);
+                    document.getElementById("formulario-caso").style.display = "none"; // Ocultar el formulario después de agregar el caso
+                } else {
+                    alert(data.message || "Error al guardar el caso.");
+                }
+            } catch (error) {
+                console.error("Error al enviar los datos:", error);
+                alert("Error al intentar guardar el caso.");
+            }
+        });
+    </script>
+</body>
+</html>
